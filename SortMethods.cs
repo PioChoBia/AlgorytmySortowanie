@@ -6,8 +6,8 @@ namespace AlgorytmySortowanie
     {
         /*metody sortowania
          * Bubble Sort /bąbelkowe/
-         * Selection Sort /sortowanie przez wybór najmniejszego/
-         * 
+         * Selection Sort /przez wybór najmniejszego/
+         * Insert Sort/przez wstawianie_bierzemy kolejny i porównujemy z posortowanymi/
          */
 
         public static int[] BubbleSort(int[] tab)
@@ -51,6 +51,34 @@ namespace AlgorytmySortowanie
             }
             return tab;
         }
+
+        public static int[] InsertSort(int[] tab)
+        {
+            for (int i = 1; i < tab.Length; i++)
+            {
+                for (int j = i; j>0; j--)
+                {
+                    if (tab[j] < tab[j - 1])
+                    {
+                        int i1 = tab[j];
+                        tab[j] = tab[j - 1];
+                        tab[j - 1] = i1;                     
+                    }
+                    else break;
+                }
+
+                if (i==9)
+                {
+                    ;
+                }
+
+            }
+
+
+            return tab;
+        }
+
+
 
 
 

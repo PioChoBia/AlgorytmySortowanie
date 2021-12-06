@@ -27,7 +27,10 @@ namespace AlgorytmySortowanie
             measureTime.StartTime();
 
             // DisplayResults( BubbleSort(tabDemo) );
-            DisplayResults( SelectionSort(tabDemo) );
+            //DisplayResults( SelectionSort(tabDemo) );
+
+
+            DisplayResults( InsertSort(tabDemo) );
 
             measureTime.StopTimePrint();
 
