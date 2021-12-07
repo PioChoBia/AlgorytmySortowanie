@@ -28,9 +28,8 @@ namespace AlgorytmySortowanie
 
             // DisplayResults( BubbleSort(tabDemo) );
             //DisplayResults( SelectionSort(tabDemo) );
-
-
-            DisplayResults( InsertSort(tabDemo) );
+            //DisplayResults( InsertSortLinear(tabDemo) );
+            DisplayResults( CountingSort(tabDemo) );
 
             measureTime.StopTimePrint();
 

@@ -4,7 +4,7 @@ namespace AlgorytmySortowanie
 {
     public partial class Program
     {
-        /*metody sortowania
+        /*metody sortowania, sortuje rosnąco/od lewej do prawej/
          * Bubble Sort /bąbelkowe/
          * Selection Sort /przez wybór najmniejszego/
          * Insert Sort/przez wstawianie_bierzemy kolejny i porównujemy z posortowanymi/
@@ -52,7 +52,7 @@ namespace AlgorytmySortowanie
             return tab;
         }
 
-        public static int[] InsertSort(int[] tab)
+        public static int[] InsertSortLinear(int[] tab)
         {
             for (int i = 1; i < tab.Length; i++)
             {
@@ -66,15 +66,39 @@ namespace AlgorytmySortowanie
                     }
                     else break;
                 }
-
-                if (i==9)
-                {
-                    ;
-                }
-
             }
+            return tab;
+        }
 
+        public static int[] CountingSort(int[] tab)
+        {
+            int iMin = 0, iMax = 0;
 
+            for (int i = 0; i < tab.Length; i++)
+            {
+                if (tab[i] < iMin) iMin = tab[i];
+                if (tab[i] > iMax) iMax = tab[i];
+            }
+            int baseInt = 0 - iMin;
+            int[] tabCounting = new int[iMax - iMin+1];
+            for (int i = 0; i < tabCounting.Length; i++)
+            {
+                tabCounting[i] = 0;
+            }
+            for (int i = 0; i < tab.Length; i++)
+            {
+                tabCounting[tab[i] - baseInt] += 1;
+            }
+            int counter = 0;
+            for (int i = 0; i < tabCounting.Length; i++)
+            {
+                while (tabCounting[i] > 0)
+                {
+                    tab[counter] = i;
+                    tabCounting[i] --;
+                    counter ++;
+                }
+            }
             return tab;
         }
 
